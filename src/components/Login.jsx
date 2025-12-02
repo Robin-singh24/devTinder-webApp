@@ -30,7 +30,7 @@ const Login = () => {
 
     return (
         <div>
-            <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4 mx-auto mt-10">
+            <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-full max-w-md border p-4 mx-auto mt-10">
 
                 <h2 className="text-3xl font-semibold text-center mb-4">Login</h2>
 
