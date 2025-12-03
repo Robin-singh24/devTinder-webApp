@@ -29,19 +29,26 @@ const Connections = () => {
     if (connections.length === 0) return <h1 className='font-bold text-3xl'>No Connections Found</h1>
 
     return (
-        <div className='text-center my-10'>
+        <div className='text-center my-10 '>
             <h1 className='font-bold text-3xl'>Connections</h1>
-
             {connections.map((connection) => {
-                const {firstName, lastName, photoUrl, about, age} = connection;
+                const { firstName, lastName, photoUrl, about, age, gender } = connection;
 
-                return(
-                    <div>
-                        <img alt='photo' className='w-40 h-40' src={photoUrl}></img>
-                        <h2>{firstName + " " + lastName}</h2>
-                        <p>{about}</p>
-                    </div>
-                ) 
+                return (
+                    <div className="flex bg-base-100 shadow-sm w-1/2 mx-auto my-6">
+                        <figure>
+                            <img
+                                alt="photo"
+                                src={photoUrl}
+                                className='w-30 h-30 rounded-2xl'>
+                            </img>
+                        </figure>
+                        <div className="text-left mx-4">
+                            <h2 className="card-title text-2xl">{firstName+ " " + lastName}</h2>
+                            {age && gender &&(<p>{age+ ", " + gender}</p>)}
+                            <p>{about}</p>
+                        </div>
+                    </div>)
             })}
         </div>
 
