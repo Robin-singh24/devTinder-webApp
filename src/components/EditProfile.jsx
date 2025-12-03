@@ -38,9 +38,7 @@ const EditProfile = ({ user }) => {
         <>
             <div className='flex justify-center my-10 '>
                 <div className='flex justify-center mx-10'>
-                    <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-full max-w-md border p-4 h-[520px]">
-
-                        <h2 className="text-3xl font-semibold text-center mb-4">Edit Profile</h2>
+                    <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-full max-w-md border p-6 h-[520px] box-border flex flex-col justify-between">
 
 
                         <div>
@@ -84,7 +82,7 @@ const EditProfile = ({ user }) => {
 
 
                         <p className='text-red-800 flex justify-center text-sm'></p>
-                        <div className="flex justify-center mt-4">
+                        <div className="flex justify-center pt-2">
                             <button className="btn btn-neutral" onClick={saveProfile} >
                                 Update
                             </button>

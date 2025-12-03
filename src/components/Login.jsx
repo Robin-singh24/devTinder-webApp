@@ -19,8 +19,7 @@ const Login = () => {
                 BASE_URL + "/login", {
                 email,
                 password,
-            },
-                { withCredentials: true });
+            }, { withCredentials: true });
             dispatch(addUser(res.data));
             return navigate("/");
         } catch (error) {

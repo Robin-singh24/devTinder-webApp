@@ -8,6 +8,8 @@ import Body from './components/Body.jsx';
 import Login from './components/Login.jsx';
 import Profile from './components/Profile.jsx';
 import Feed from './components/Feed.jsx';
+import Connections from './components/Connections.jsx';
+import Requests from './components/Requests.jsx';
 
 function App() {
   return (
