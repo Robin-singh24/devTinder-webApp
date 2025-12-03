@@ -63,16 +63,6 @@ const EditProfile = ({ user }) => {
                             />
                         </div>
 
-
-                        <div>
-                            <label className="label text-xl">About</label>
-                            <input
-                                type="text"
-                                value={about}
-                                className="input w-full"
-                                onChange={(e) => setAbout(e.target.value)}
-                            />
-                        </div>
                         <div>
                             <label className="label text-xl">Profile Photo</label>
                             <input
@@ -82,6 +72,16 @@ const EditProfile = ({ user }) => {
                                 onChange={(e) => setPhotoUrl(e.target.value)}
                             />
                         </div>
+                        
+                        <div>
+                            <label className="label text-xl">About</label>
+                            <textarea
+                                value={about}
+                                className="textarea w-full h-32 resize-none"
+                                onChange={(e) => setAbout(e.target.value)}
+                            />
+                        </div>
+
 
                         <p className='text-red-800 flex justify-center text-sm'></p>
                         <div className="flex justify-center mt-4">
