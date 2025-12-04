@@ -36,11 +36,9 @@ const EditProfile = ({ user }) => {
 
     return (
         <>
-            <div className='flex justify-center my-10 '>
+            <div className='flex justify-center my-10 items-stretch gap-10'>
                 <div className='flex justify-center mx-10'>
-                    <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-full max-w-md border p-6 h-[520px] box-border flex flex-col justify-between">
-
-
+                    <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-full max-w-md border p-6 box-border flex flex-col justify-between">
                         <div>
                             <label className="label text-xl">First Name</label>
                             <input
@@ -70,7 +68,7 @@ const EditProfile = ({ user }) => {
                                 onChange={(e) => setPhotoUrl(e.target.value)}
                             />
                         </div>
-                        
+
                         <div>
                             <label className="label text-xl">About</label>
                             <textarea
@@ -90,7 +88,7 @@ const EditProfile = ({ user }) => {
 
                     </fieldset>
                 </div>
-                <UserCard user={{ firstName, lastName, about, photoUrl }} />
+                <div className='flex'><UserCard user={{ firstName, lastName, about, photoUrl }} /></div>
             </div>
             {showToast && (<div className="toast toast-top toast-center">
                 <div className="alert alert-success">
