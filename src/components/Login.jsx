@@ -6,8 +6,10 @@ import { useNavigate } from 'react-router-dom';
 import { BASE_URL } from '../utils/constants.js';
 
 const Login = () => {
-    const [email, setEmail] = useState("Robin@gmail.com");
-    const [password, setPassword] = useState("Robin@1223");
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
     const [error, setError] = useState("");
 
     const dispatch = useDispatch();
@@ -33,6 +35,25 @@ const Login = () => {
 
                 <h2 className="text-3xl font-semibold text-center mb-4">Login</h2>
 
+                <div>
+                    <label className="label text-xl">First Name</label>
+                    <input
+                        type="text"
+                        value={firstName}
+                        className="input w-full"
+                        onChange={(e) => setFirstName(e.target.value)}
+                    />
+                </div>
+
+                <div className="mt-3">
+                    <label className="label text-xl">Last Name</label>
+                    <input
+                        type="text"
+                        value={lastName}
+                        className="input w-full"
+                        onChange={(e) => setLastName(e.target.value)}
+                    />
+                </div>
                 <div>
                     <label className="label text-xl">Email</label>
                     <input
