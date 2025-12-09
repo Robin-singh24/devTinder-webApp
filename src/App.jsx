@@ -9,6 +9,7 @@ import Profile from './components/Profile.jsx';
 import Feed from './components/Feed.jsx';
 import Connections from './components/Connections.jsx';
 import Requests from './components/Requests.jsx';
+import Premium from './components/Premium.jsx';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
               <Route path='/profile' element={<Profile />} />
               <Route path='/connections' element={<Connections />} />
               <Route path='/requests' element={<Requests />} />
+              <Route path='/premium' element={<Premium />} />
             </Route>
           </Routes>
         </BrowserRouter>
