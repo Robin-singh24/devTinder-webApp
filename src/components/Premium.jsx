@@ -1,8 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import axios from 'axios';
 import { BASE_URL } from '../utils/constants'
 
 const Premium = () => {
+
+    const [isUserPremium, setIsUserPremium] = useState(false);
+
+    const verifyPremiumUser = async () => {
+        const res = await axios.get(BASE_URL + "/premium/verify", { withCredentials: true });
+
+        if (res.data.isPremium === true) {
+            setIsUserPremium(true)
+        }
+    }
 
     const handleBuyClick = async (type) => {
 
@@ -30,6 +40,7 @@ const Premium = () => {
             theme: {
                 color: "#F37254",
             },
+            handler: verifyPremiumUser,
         };
 
         const rzp = new window.Razorpay(options);
@@ -37,24 +48,31 @@ const Premium = () => {
 
     };
 
-    return (
-        <div className='m-10 flex justify-center'>
+    return isUserPremium ? (
+        "You already are a Premium User..."
+    ) : (
+        <div className="m-10 flex justify-center">
             <div className="flex w-full flex-col lg:flex-row p-15">
                 <div className="card bg-base-300 rounded-box grid h-80 grow place-items-center">
-                    <h1 className='font-bold text-3xl'>Perks of being a Premium Member: </h1>
-                    <div className='text-center'>
+                    <h1 className="font-bold text-3xl">Perks of being a Premium Member: </h1>
+                    <div className="text-center">
                         <ul>
                             <li>- Send Unlimited Likes</li>
-                            <li>- get verified</li>
+                            <li>- Get Verified</li>
                             <li>- Get Priority Likes</li>
-                            <li>- Send as many Messages you want to send</li>
+                            <li>- Send Unlimited Messages</li>
                         </ul>
                     </div>
-                    <button onClick={() => handleBuyClick("premium")} className='flex justify-center btn btn-primary'>Buy Premium</button>
+                    <button
+                        onClick={() => handleBuyClick("premium")}
+                        className="flex justify-center btn btn-primary"
+                    >
+                        Buy Premium
+                    </button>
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Premium
+export default Premium;
