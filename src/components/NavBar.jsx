@@ -29,7 +29,7 @@ const NavBar = () => {
             if (!user) navigate('/login');
             else navigate('/');
           }}>
-          👨🏻‍💻 DevTinder</button>
+          👨🏻‍💻 DINDER</button>
       </div>
       {user && (
         <div className="flex items-center gap-3">
